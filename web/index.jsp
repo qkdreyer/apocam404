@@ -12,6 +12,6 @@
         <title>Chaudrasse</title>
     </head>
     <body>
-        <h1>Hello World Test!</h1>
+        <h1>Salut tête d'endive.</h1>
     </body>
 </html>
