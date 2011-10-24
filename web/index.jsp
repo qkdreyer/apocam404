@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Chaudrasse</title>
+        <title>Giorgio le Salami</title>
     </head>
     <body>
         <h1>Salut tête d'endive.</h1>
