@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>Salut tête d'endive.</h1>
-        <h2>Tagazok !</h2>
+        <h2>Tagazok 34 !</h2>
     </body>
 </html>
