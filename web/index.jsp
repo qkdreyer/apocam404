@@ -9,9 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Title JSP Page</title>
+        <title>Giorgio le Salami</title>
     </head>
     <body>
-        <h1>Hello World Test!</h1>
+        <h1>Salut tête d'endive.</h1>
+        <h2>Tagazok 34 !</h2>
     </body>
 </html>
