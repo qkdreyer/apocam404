@@ -12,7 +12,7 @@
         <title>Giorgio le Salami</title>
     </head>
     <body>
-        <h1>Salut tête d'endive. Tu pu</h1>
+        <h1>Salut tête d'endive. Tu pues.</h1>
         <h2>Tagazok 34 !</h2>
     </body>
 </html>
