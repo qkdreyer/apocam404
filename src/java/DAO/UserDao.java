@@ -4,7 +4,7 @@
  */
 package DAO;
 
-import POJO.Users;
+import POJO.User;
 
 /**
  *
@@ -30,6 +30,6 @@ public interface UserDao {
      * @throws DataAccessException in case of Data access errors 
      * (database unreachable, etc.)
      */
-    public Users getUser(String login);
+    public User getUser(String login);
     
 }

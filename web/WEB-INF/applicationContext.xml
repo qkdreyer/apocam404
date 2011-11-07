@@ -22,7 +22,7 @@
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
     
     <!-- General  -->
-	<bean id="userDao" class="DAO.Hibernate3.UserDaoImpl">
+	<bean id="userDao" class="DAO.Impl.UserDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO.Hibernate3;
+package DAO.Impl;
 
 import DAO.UserDao;
-import POJO.Users;
+import POJO.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Expression;
@@ -27,11 +27,11 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
             logger.info("Check user with login: " + login + " and password : [PROTECTED]");
             Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
             // create a new criteria
-            Criteria crit = session.createCriteria(Users.class);
+            Criteria crit = session.createCriteria(User.class);
             crit.add(Expression.ilike("loginUser", login));
             crit.add(Expression.eq("passwordUser", password));
 
-            Users user = (Users) crit.uniqueResult();
+            User user = (User) crit.uniqueResult();
             return (user != null);
         } catch (DataAccessException e) {
             // Critical errors : database unreachable, etc.
@@ -42,7 +42,7 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     }
 
     @Override
-    public Users getUser(String login) {
+    public User getUser(String login) {
         if (null == login) {
             throw new IllegalArgumentException("Login is mandatory. Null value is forbidden.");
         }
@@ -50,10 +50,10 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
             logger.info("get User with login: " + login);
             Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
             // create a new criteria
-            Criteria crit = session.createCriteria(Users.class);
+            Criteria crit = session.createCriteria(User.class);
             crit.add(Expression.eq("loginUser", login));
 
-            Users user = (Users) crit.uniqueResult();
+            User user = (User) crit.uniqueResult();
             return user;
         } catch (DataAccessException e) {
             // Critical errors : database unreachable, etc.

@@ -20,4 +20,5 @@
   <table-filter match-name="ETRANGER"/>
   <table-filter match-name="POINTSJURY"/>
   <table-filter match-name="NATIONALITE"/>
+  <table-filter match-name="USERS"/>
 </hibernate-reverse-engineering>
