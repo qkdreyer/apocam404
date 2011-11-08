@@ -7,21 +7,6 @@
     <property name="hibernate.connection.url">jdbc:oracle:thin:@v240.ig.polytech.univ-montp2.fr:1521:ora10</property>
     <property name="hibernate.connection.username">joris.puechlong</property>
     <property name="hibernate.connection.password">oracle</property>
-    <mapping resource="POJO/Semestre.hbm.xml"/>
-    <mapping resource="POJO/Etranger.hbm.xml"/>
-    <mapping resource="POJO/Personne.hbm.xml"/>
-    <mapping resource="POJO/User.hbm.xml"/>
-    <mapping resource="POJO/Enseignant.hbm.xml"/>
-    <mapping resource="POJO/Note.hbm.xml"/>
-    <mapping resource="POJO/Provenance.hbm.xml"/>
-    <mapping resource="POJO/Pointsjury.hbm.xml"/>
-    <mapping resource="POJO/Etudiant.hbm.xml"/>
-    <mapping resource="POJO/Departement.hbm.xml"/>
-    <mapping resource="POJO/Nationalite.hbm.xml"/>
-    <mapping resource="POJO/Statut.hbm.xml"/>
-    <mapping resource="POJO/Redoublant.hbm.xml"/>
-    <mapping resource="POJO/Ue.hbm.xml"/>
-    <mapping resource="POJO/Ecue.hbm.xml"/>
-    <mapping resource="POJO/Etape.hbm.xml"/>
+    <mapping resource="domain/user/Users.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
