@@ -4,12 +4,14 @@
  */
 package service.login;
 
+import domain.login.Login;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.validation.ValidationUtils;
 
 import controller.login.*;
 import service.login.*;
+import domain.login.*;
 
 public class LoginValidator implements Validator {
 

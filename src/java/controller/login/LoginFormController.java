@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
-import service.login.Login;
+import domain.login.Login;
 
 @SuppressWarnings("deprecation")
 public class LoginFormController extends SimpleFormController {

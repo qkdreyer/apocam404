@@ -46,7 +46,7 @@
             <value>login</value>
         </property>
         <property name="commandClass">
-            <value>service.login.Login</value>
+            <value>domain.login.Login</value>
         </property>
         <property name="validator">
             <ref bean="loginValidator"/>
