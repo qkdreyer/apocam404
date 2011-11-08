@@ -20,24 +20,6 @@
           p:password="${jdbc.password}" /-->
     
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-    <bean id="personneSessionFactory"
-class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" >
-        <property name="annotatedClasses">
-            <list>
-                <value>domain.user.Users</value>
-            </list>
-        </property>
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
-            </props>
-        </property>
-    </bean>
-    <bean id="transactionManager"
-    class="org.springframework.orm.hibernate3.HibernateTransactionManager" >
-        <property name="sessionFactory" ref="personneSessionFactory" />
-    </bean>
+    
 
 </beans>
