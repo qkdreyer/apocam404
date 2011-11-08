@@ -21,21 +21,4 @@
     
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
     
-    <!-- General  -->
-	<bean id="userDao" class="DAO.Impl.UserDaoImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	
-	<!-- sessionFactory  -->
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-		<property name="configLocation">
-			<value>classpath:hibernateDerby.cfg.xml</value>
-		</property>
-		<property  name="configurationClass">
-  			 <value>org.hibernate.cfg.AnnotationConfiguration</value>
-		</property>
-	</bean>
-        
 </beans>
