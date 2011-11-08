@@ -36,7 +36,7 @@ public class LoginValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         Login login = (Login) obj;
         
-        //Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         /**       
         session.beginTransaction();
         
