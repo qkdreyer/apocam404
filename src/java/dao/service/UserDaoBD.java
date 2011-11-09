@@ -19,36 +19,12 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  */
 public class UserDaoBD implements IUserDao {
 
-
-    @Override
-    public void saveUser(Users user) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void updateUser(Users user) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void createUser(Users user) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void deleteUser(Users user) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
     @Override
     public Users checkLogin(String login, String password) {
         
-        Session session = HibernateUtil.currentSession();
-
-        Transaction tx = session.beginTransaction();
-
-        List list = session.createQuery("from Users").list();
-        Iterator it = list.iterator();
+        ArrayList<Users> usersList = getUsersList();
+        
+        Iterator it = usersList.iterator();
         
         boolean userIsFind = false;
         Users readUser = null;
@@ -62,10 +38,6 @@ public class UserDaoBD implements IUserDao {
                 userIsFind = true;
             }
         }
-        
-        tx.commit();
-
-        HibernateUtil.closeSession();
         
         if (userIsFind)
         {
@@ -86,7 +58,28 @@ public class UserDaoBD implements IUserDao {
 
     @Override
     public ArrayList<Users> getUsersList() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
+        Session session = HibernateUtil.currentSession();
+
+        Transaction tx = session.beginTransaction();
+
+        List list = session.createQuery("from Users").list();
+        Iterator it = list.iterator();
+        
+        ArrayList<Users> usersList = new ArrayList<Users>();
+        
+        while (it.hasNext()) {
+            
+            usersList.add((Users) it.next());
+        }
+        
+        tx.commit();
+
+        HibernateUtil.closeSession();
+        
+        return usersList;
+        
+        
     }
     
 }
