@@ -8,10 +8,10 @@
       <generator class="assigned"/>
     </id>
     <property name="loginUser" type="string">
-      <column length="20" name="LOGIN_USER"/>
+      <column length="25" name="LOGIN_USER"/>
     </property>
     <property name="mdpUser" type="string">
-      <column length="20" name="MDP_USER"/>
+      <column length="25" name="MDP_USER"/>
     </property>
   </class>
 </hibernate-mapping>
