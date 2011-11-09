@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.Department" table="DEPARTMENT" schema="JULIEN">
+        <id name="mnemo" type="string">
+            <column name="MNEMO" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="teacher" class="domain.model.Teacher" fetch="select">
+            <column name="PERSON_IN_CHARGE" length="20" />
+        </many-to-one>
+        <property name="label" type="string">
+            <column name="LABEL" length="200" />
+        </property>
+        <property name="diplomasVersion" type="string">
+            <column name="DIPLOMAS_VERSION" length="20" />
+        </property>
+        <set name="stages" inverse="true">
+            <key>
+                <column name="DEPARTMENT_MNEMO" length="10" not-null="true" />
+            </key>
+            <one-to-many class="domain.model.Stage" />
+        </set>
+    </class>
+</hibernate-mapping>

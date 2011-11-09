@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.Semester" table="SEMESTER" schema="JULIEN">
+        <id name="semesterCode" type="string">
+            <column name="SEMESTER_CODE" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="stage" class="domain.model.Stage" fetch="select">
+            <column name="DEPARTMENT_MNEMO" length="10" />
+            <column name="STAGE_NUMBER" precision="22" scale="0" />
+        </many-to-one>
+        <property name="label" type="string">
+            <column name="LABEL" length="20" />
+        </property>
+        <property name="optionalUes" type="big_decimal">
+            <column name="OPTIONAL_UES" precision="22" scale="0" />
+        </property>
+        <set name="specificities" inverse="true">
+            <key>
+                <column name="SEMESTER_CODE" length="10" not-null="true" />
+            </key>
+            <one-to-many class="domain.model.Specificity" />
+        </set>
+        <set name="juryPointses" inverse="true">
+            <key>
+                <column name="SEMESTER_CODE" length="10" not-null="true" />
+            </key>
+            <one-to-many class="domain.model.JuryPoints" />
+        </set>
+        <set name="ues" inverse="true">
+            <key>
+                <column name="SEMESTER_CODE" length="10" />
+            </key>
+            <one-to-many class="domain.model.Ue" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -5,8 +5,22 @@
     <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
     <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
-    <property name="hibernate.connection.username">Tyrabius</property>
-    <property name="hibernate.connection.password">vu8hu7uN</property>
+    <property name="hibernate.connection.username">julien</property>
+    <property name="hibernate.connection.password">124816</property>
+    <mapping resource="domain/model/Teacher.hbm.xml"/>
     <mapping resource="domain/model/Users.hbm.xml"/>
+    <mapping resource="domain/model/Department.hbm.xml"/>
+    <mapping resource="domain/model/Ecue.hbm.xml"/>
+    <mapping resource="domain/model/Mark.hbm.xml"/>
+    <mapping resource="domain/model/Ue.hbm.xml"/>
+    <mapping resource="domain/model/JuryPoints.hbm.xml"/>
+    <mapping resource="domain/model/Stage.hbm.xml"/>
+    <mapping resource="domain/model/Specificity.hbm.xml"/>
+    <mapping resource="domain/model/Status.hbm.xml"/>
+    <mapping resource="domain/model/Products.hbm.xml"/>
+    <mapping resource="domain/model/Nationality.hbm.xml"/>
+    <mapping resource="domain/model/Semester.hbm.xml"/>
+    <mapping resource="domain/model/Student.hbm.xml"/>
+    <mapping resource="domain/model/Origin.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.JuryPoints" table="JURY_POINTS" schema="JULIEN">
+        <composite-id name="id" class="domain.model.JuryPointsId">
+            <key-property name="studentNumber" type="int">
+                <column name="STUDENT_NUMBER" precision="8" scale="0" />
+            </key-property>
+            <key-property name="semesterCode" type="string">
+                <column name="SEMESTER_CODE" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="student" class="domain.model.Student" update="false" insert="false" fetch="select">
+            <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="semester" class="domain.model.Semester" update="false" insert="false" fetch="select">
+            <column name="SEMESTER_CODE" length="10" not-null="true" />
+        </many-to-one>
+        <property name="juryPoints" type="java.lang.Byte">
+            <column name="JURY_POINTS" precision="2" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

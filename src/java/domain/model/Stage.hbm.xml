@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.Stage" table="STAGE" schema="JULIEN">
+        <composite-id name="id" class="domain.model.StageId">
+            <key-property name="departmentMnemo" type="string">
+                <column name="DEPARTMENT_MNEMO" length="10" />
+            </key-property>
+            <key-property name="stageNumber" type="big_decimal">
+                <column name="STAGE_NUMBER" precision="22" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="department" class="domain.model.Department" update="false" insert="false" fetch="select">
+            <column name="DEPARTMENT_MNEMO" length="10" not-null="true" />
+        </many-to-one>
+        <many-to-one name="teacher" class="domain.model.Teacher" fetch="select">
+            <column name="PERSON_IN_CHARGE" length="20" />
+        </many-to-one>
+        <set name="students" inverse="true">
+            <key>
+                <column name="DEPARTMENT_MNEMO" length="10" />
+                <column name="STAGE_NUMBER" precision="22" scale="0" />
+            </key>
+            <one-to-many class="domain.model.Student" />
+        </set>
+        <set name="semesters" inverse="true">
+            <key>
+                <column name="DEPARTMENT_MNEMO" length="10" />
+                <column name="STAGE_NUMBER" precision="22" scale="0" />
+            </key>
+            <one-to-many class="domain.model.Semester" />
+        </set>
+    </class>
+</hibernate-mapping>

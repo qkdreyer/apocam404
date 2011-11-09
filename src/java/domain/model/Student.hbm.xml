@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.Student" table="STUDENT" schema="JULIEN">
+        <id name="studentNumber" type="int">
+            <column name="STUDENT_NUMBER" precision="8" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="nationality" class="domain.model.Nationality" fetch="select">
+            <column name="NATIONALITY_ID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="stage" class="domain.model.Stage" fetch="select">
+            <column name="DEPARTMENT_MNEMO" length="10" />
+            <column name="STAGE_NUMBER" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="origin" class="domain.model.Origin" fetch="select">
+            <column name="ORIGIN_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="lastname" type="string">
+            <column name="LASTNAME" length="40" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="FIRSTNAME" length="40" />
+        </property>
+        <property name="sex" type="string">
+            <column name="SEX" length="2" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="50" />
+        </property>
+        <property name="ineNumber" type="string">
+            <column name="INE_NUMBER" length="10" />
+        </property>
+        <property name="toeicScore" type="java.lang.Short">
+            <column name="TOEIC_SCORE" precision="3" scale="0" />
+        </property>
+        <property name="juryPoints" type="java.lang.Double">
+            <column name="JURY_POINTS" precision="126" scale="0" />
+        </property>
+        <property name="juryComment" type="string">
+            <column name="JURY_COMMENT" length="200" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="20" />
+        </property>
+        <set name="specificities" inverse="true">
+            <key>
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="domain.model.Specificity" />
+        </set>
+        <set name="ues" inverse="false" table="STUDENT_OPTIONAL_UES">
+            <key>
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Ue">
+                <column name="UE_CODE" length="20" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="statuses" inverse="false" table="STUDENT_STATUS">
+            <key>
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Status">
+                <column name="STATUS_ID" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="marks" inverse="true">
+            <key>
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="domain.model.Mark" />
+        </set>
+        <set name="juryPointses" inverse="true">
+            <key>
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="domain.model.JuryPoints" />
+        </set>
+        <set name="ues_1" inverse="false" table="VAE">
+            <key>
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Ue">
+                <column name="UE_CODE" length="20" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="ues_2" inverse="false" table="APDJ">
+            <key>
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Ue">
+                <column name="UE_CODE" length="20" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

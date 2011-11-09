@@ -1,5 +1,5 @@
 package domain.model;
-// Generated 8 nov. 2011 21:56:17 by Hibernate Tools 3.2.1.GA
+// Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA
 
 
 import javax.persistence.Column;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="USERS"
-    ,schema="Tyrabius"
+    ,schema="JULIEN"
 )
 public class Users  implements java.io.Serializable {
 

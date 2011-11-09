@@ -3,16 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="domain.model.Users" table="USERS" schema="JULIEN">
-        <id name="idUser" type="short">
-            <column name="ID_USER" precision="4" scale="0" />
+    <class name="domain.model.Products" table="PRODUCTS" schema="JULIEN">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
             <generator class="assigned" />
         </id>
-        <property name="loginUser" type="string">
-            <column name="LOGIN_USER" length="20" />
+        <property name="description" type="string">
+            <column name="DESCRIPTION" />
         </property>
-        <property name="mdpUser" type="string">
-            <column name="MDP_USER" length="20" />
+        <property name="price" type="big_decimal">
+            <column name="PRICE" precision="15" />
         </property>
     </class>
 </hibernate-mapping>

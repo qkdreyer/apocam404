@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.Status" table="STATUS" schema="JULIEN">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="label" type="string">
+            <column name="LABEL" length="20" />
+        </property>
+        <set name="students" inverse="true" table="STUDENT_STATUS">
+            <key>
+                <column name="STATUS_ID" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Student">
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

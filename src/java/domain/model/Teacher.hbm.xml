@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.Teacher" table="TEACHER" schema="JULIEN">
+        <id name="id" type="string">
+            <column name="ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="lastname" type="string">
+            <column name="LASTNAME" length="40" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="FIRSTNAME" length="40" />
+        </property>
+        <property name="sex" type="string">
+            <column name="SEX" length="2" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="50" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="20" />
+        </property>
+        <property name="rights" type="big_decimal">
+            <column name="RIGHTS" precision="22" scale="0" />
+        </property>
+        <set name="ues" inverse="true">
+            <key>
+                <column name="PERSON_IN_CHARGE" length="20" />
+            </key>
+            <one-to-many class="domain.model.Ue" />
+        </set>
+        <set name="stages" inverse="true">
+            <key>
+                <column name="PERSON_IN_CHARGE" length="20" />
+            </key>
+            <one-to-many class="domain.model.Stage" />
+        </set>
+        <set name="ecues" inverse="true">
+            <key>
+                <column name="PERSON_IN_CHARGE" length="20" />
+            </key>
+            <one-to-many class="domain.model.Ecue" />
+        </set>
+        <set name="departments" inverse="true">
+            <key>
+                <column name="PERSON_IN_CHARGE" length="20" />
+            </key>
+            <one-to-many class="domain.model.Department" />
+        </set>
+    </class>
+</hibernate-mapping>

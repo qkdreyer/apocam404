@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 nov. 2011 19:39:34 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="domain.model.Ue" table="UE" schema="JULIEN">
+        <id name="ueCode" type="string">
+            <column name="UE_CODE" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="teacher" class="domain.model.Teacher" fetch="select">
+            <column name="PERSON_IN_CHARGE" length="20" />
+        </many-to-one>
+        <many-to-one name="semester" class="domain.model.Semester" fetch="select">
+            <column name="SEMESTER_CODE" length="10" />
+        </many-to-one>
+        <property name="label" type="string">
+            <column name="LABEL" length="30" />
+        </property>
+        <property name="ects" type="big_decimal">
+            <column name="ECTS" precision="22" scale="0" />
+        </property>
+        <property name="optional" type="java.lang.Byte">
+            <column name="OPTIONAL" precision="2" scale="0" />
+        </property>
+        <set name="students" inverse="true" table="VAE">
+            <key>
+                <column name="UE_CODE" length="20" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Student">
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="students_1" inverse="true" table="APDJ">
+            <key>
+                <column name="UE_CODE" length="20" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Student">
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="ecues" inverse="true">
+            <key>
+                <column name="UE_CODE" length="20" />
+            </key>
+            <one-to-many class="domain.model.Ecue" />
+        </set>
+        <set name="students_2" inverse="true" table="STUDENT_OPTIONAL_UES">
+            <key>
+                <column name="UE_CODE" length="20" not-null="true" />
+            </key>
+            <many-to-many entity-name="domain.model.Student">
+                <column name="STUDENT_NUMBER" precision="8" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

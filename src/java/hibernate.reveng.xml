@@ -2,5 +2,23 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-schema="JULIEN"/>
+  <table-filter match-name="STUDENT_OPTIONAL_UES"/>
+  <table-filter match-name="TEACHER"/>
+  <table-filter match-name="NATIONALITY"/>
+  <table-filter match-name="UE"/>
+  <table-filter match-name="PRODUCTS"/>
+  <table-filter match-name="STUDENT_STATUS"/>
+  <table-filter match-name="DEPARTMENT"/>
+  <table-filter match-name="VAE"/>
+  <table-filter match-name="STATUS"/>
+  <table-filter match-name="SEMESTER"/>
+  <table-filter match-name="ORIGIN"/>
   <table-filter match-name="USERS"/>
+  <table-filter match-name="MARK"/>
+  <table-filter match-name="APDJ"/>
+  <table-filter match-name="STAGE"/>
+  <table-filter match-name="JURY_POINTS"/>
+  <table-filter match-name="STUDENT"/>
+  <table-filter match-name="SPECIFICITY"/>
+  <table-filter match-name="ECUE"/>
 </hibernate-reverse-engineering>
