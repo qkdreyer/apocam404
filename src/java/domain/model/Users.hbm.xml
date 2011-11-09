@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 8 nov. 2011 21:56:17 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="domain.model.Users" schema="JULIEN" table="USERS">
+    <id name="idUser" type="short">
+      <column name="ID_USER" precision="4" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="loginUser" type="string">
+      <column length="20" name="LOGIN_USER"/>
+    </property>
+    <property name="mdpUser" type="string">
+      <column length="20" name="MDP_USER"/>
+    </property>
+  </class>
+</hibernate-mapping>
