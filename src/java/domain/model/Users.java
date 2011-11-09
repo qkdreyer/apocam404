@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="USERS"
-    ,schema="JULIEN"
+    ,schema="Tyrabius"
 )
 public class Users  implements java.io.Serializable {
 
