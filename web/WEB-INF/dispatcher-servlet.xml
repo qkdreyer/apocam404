@@ -44,7 +44,8 @@
         </property>
     </bean>
      
-     
+    <!-- Login -->
+    
     <bean id="loginController" class="controllers.forms.LoginFormController">
         <property name="sessionForm">
             <value>false</value>
@@ -66,6 +67,15 @@
         </property>
     </bean>  
      
-     <bean id="viewTeacherInformationsController" class="controllers.pages.ViewTeacherInformationsController" />
-     
+    <!-- Teacher  -->
+    
+    <bean id="viewTeacherInformationsController" class="controllers.pages.ViewTeacherInformationsController">
+        <property name="teacherManager">
+            <ref bean="teacherManager" />
+        </property>
+    </bean>
+    
+
+    
+    
 </beans>

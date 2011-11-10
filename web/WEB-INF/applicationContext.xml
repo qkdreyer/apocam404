@@ -10,8 +10,11 @@
 
 
 <!--
-    The login controller.
+    Dependencies injections
     -->
+    
+    <!-- Login -->
+    
     <bean id="loginValidator" class="controllers.forms.LoginValidator">
         <property name="userManager">
             <ref bean="userManager" />
@@ -26,18 +29,18 @@
 
     <bean id="userDao" class="dao.service.UserDaoBD" />
     
+    
+    <!-- Teachers -->
+    
+    <bean id="teacherManager" class="domain.service.TeacherManagerImpl">
+           <property name="teacherDao">
+               <ref bean="teacherDao" />
+           </property>
+    </bean>
+        
+    <bean id="teacherDao" class="dao.service.TeacherDaoBD" />
 
-    <!--bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-          p:location="/WEB-INF/jdbc.properties" />
-    
-    <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-          p:driverClassName="${jdbc.driverClassName}"
-          p:url="${jdbc.url}"
-          p:username="${jdbc.username}"
-          p:password="${jdbc.password}" /-->
-    
-    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
     
 </beans>
+
+
