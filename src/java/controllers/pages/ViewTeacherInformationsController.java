@@ -24,9 +24,9 @@ public class ViewTeacherInformationsController implements Controller {
             throws ServletException, IOException {
 
         ModelAndView modelAndView = new ModelAndView("viewTeacherInformations");
-        modelAndView.addObject("id", this.teacherManager.getTeacher(1).getId());
-        modelAndView.addObject("firstname", this.teacherManager.getTeacher(1).getFirstname());
-        modelAndView.addObject("lastname", this.teacherManager.getTeacher(1).getLastname());
+        //modelAndView.addObject("id", this.teacherManager.getTeacher(1).getId());
+        //modelAndView.addObject("firstname", this.teacherManager.getTeacher(1).getFirstname());
+        //modelAndView.addObject("lastname", this.teacherManager.getTeacher(1).getLastname());
 
         return modelAndView;
 

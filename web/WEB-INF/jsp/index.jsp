@@ -9,6 +9,7 @@
 	<body bgcolor="#EEEEEE">
 		<center>
 			<a href="login.html">User Login Here</a><br/><br/>
+                        <a href="viewTeacherInformations.html">View teacher informations</a><br/><br/>
 		</center>
 	</body>
 </html>

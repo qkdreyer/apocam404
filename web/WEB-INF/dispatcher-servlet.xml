@@ -22,6 +22,7 @@
                 <prop key="index.htm">indexController</prop>
                 <prop key="login.html">loginController</prop>
                 <prop key="iframe.html">iframeController</prop>
+                <prop key="viewTeacherInformations.html">viewTeacherInformationsController</prop>
             </props>
         </property>
     </bean>
@@ -37,9 +38,34 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
           
-    <bean id="iframeController" class="iframe.iframeController">
+    <bean id="iframeController" class="controllers.pages.IFrameController">
         <property name="commandClass">
             <value>iframe.iframe</value>
         </property>
-     </bean>
+    </bean>
+     
+     
+    <bean id="loginController" class="controllers.forms.LoginFormController">
+        <property name="sessionForm">
+            <value>false</value>
+        </property>
+        <property name="commandName">
+            <value>login</value>
+        </property>
+        <property name="commandClass">
+            <value>domain.model.formobjects.Login</value>
+        </property>
+        <property name="validator">
+            <ref bean="loginValidator"/>
+        </property>		
+        <property name="formView">
+            <value>login</value>
+        </property>
+        <property name="successView">
+            <value>success</value>
+        </property>
+    </bean>  
+     
+     <bean id="viewTeacherInformationsController" class="controllers.pages.ViewTeacherInformationsController" />
+     
 </beans>

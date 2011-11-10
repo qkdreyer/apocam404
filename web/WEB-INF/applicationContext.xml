@@ -12,7 +12,7 @@
 <!--
     The login controller.
     -->
-    <bean id="loginValidator" class="net.roseindia.web.LoginValidator">
+    <bean id="loginValidator" class="controllers.forms.LoginValidator">
         <property name="userManager">
             <ref bean="userManager" />
         </property>
@@ -26,27 +26,6 @@
 
     <bean id="userDao" class="dao.service.UserDaoBD" />
     
-    <bean id="loginController" class="net.roseindia.web.LoginFormController">
-        <property name="sessionForm">
-            <value>false</value>
-        </property>
-        <property name="commandName">
-            <value>login</value>
-        </property>
-        <property name="commandClass">
-            <value>net.roseindia.web.Login</value>
-        </property>
-        <property name="validator">
-            <ref bean="loginValidator"/>
-        </property>		
-        <property name="formView">
-            <value>login</value>
-        </property>
-        <property name="successView">
-            <value>success</value>
-        </property>
-    </bean>   
-
 
     <!--bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
