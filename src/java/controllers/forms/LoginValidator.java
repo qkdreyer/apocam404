@@ -1,4 +1,4 @@
-package net.roseindia.web;
+package controllers.forms;
 
 import dao.service.IUserDao;
 import dao.service.UserDaoBD;
@@ -11,7 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.validation.ValidationUtils;
 
-import net.roseindia.web.*;
+import domain.model.formobjects.Login;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class LoginValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "field.required", "Please Enter User Name");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "field.required", "Please Enter Password");
 
-        if ((userManager.checkLogin(submitLogin.getUsername(), submitLogin.getPassword()) == null)) {
+        if ((this.userManager.checkLogin(submitLogin.getUsername(), submitLogin.getPassword()) == null)) {
             System.out.println("Erreur ! Mauvais nom d'utilisateur ou mot de passe !");
             errors.reject("invalidUser", "Erreur ! Mauvais nom d'utilisateur ou mot de passe !");
         }

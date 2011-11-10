@@ -5,7 +5,6 @@
 package dao.service;
 
 import domain.model.Teacher;
-import java.util.ArrayList;
 
 /**
  *

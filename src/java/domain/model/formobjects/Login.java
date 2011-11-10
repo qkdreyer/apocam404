@@ -1,4 +1,4 @@
-package net.roseindia.web;
+package domain.model.formobjects;
 
 public class Login {
 	public Login(){}

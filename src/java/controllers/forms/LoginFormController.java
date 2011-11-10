@@ -1,4 +1,4 @@
-package net.roseindia.web;
+package controllers.forms;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.ServletException;
@@ -6,8 +6,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
-import net.roseindia.web.Login;
-import net.roseindia.web.Login;
+import domain.model.formobjects.Login;
+import domain.model.formobjects.Login;
+import domain.model.formobjects.Login;
 
 @SuppressWarnings("deprecation")
 public class LoginFormController extends SimpleFormController {

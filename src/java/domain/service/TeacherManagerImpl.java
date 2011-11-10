@@ -22,9 +22,9 @@ public class TeacherManagerImpl implements ITeacherManager {
     
     @Override
     public Teacher getTeacher(int idTeacher) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
+        return this.teacherDao.getTeacher(idTeacher);
     }
     
-    
-    
+
 }

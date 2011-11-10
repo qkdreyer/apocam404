@@ -7,8 +7,6 @@ package domain.service;
 
 import dao.service.IUserDao;
 import domain.model.Users;
-import org.springframework.beans.factory.annotation.Autowired;
-
 
 /**
  *
@@ -28,7 +26,7 @@ public class UserManagerImpl implements IUserManager {
     }
     
     public Users checkLogin(String login, String password) {
-        return userDao.checkLogin(login, password);
+        return this.userDao.checkLogin(login, password);
     }
     
 }

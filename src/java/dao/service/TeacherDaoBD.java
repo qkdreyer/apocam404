@@ -14,7 +14,16 @@ public class TeacherDaoBD implements ITeacherDao {
 
     @Override
     public Teacher getTeacher(int idTeacher) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
+        /* Juste pour le test */
+        
+        Teacher teacher = new Teacher();
+        teacher.setId("1");
+        teacher.setFirstname("Térence");
+        teacher.setLastname("la terreur");
+        
+        return teacher;
+        
     }
     
 }
